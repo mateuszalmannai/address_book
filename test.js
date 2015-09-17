@@ -1,5 +1,5 @@
 var Contact = require('./contact');
 
-var name = Contact.parseName("John Smith, 604-123-9999");
+var number = Contact.parseNumber("John Smith, 604-123-9999");
 
-console.log(name);
+console.log(number);
