@@ -1,5 +1,5 @@
-var Parrot = require('./parrot');
+var Contact = require('./contact');
 
-var message = Parrot.speakEnglish();
+var name = Contact.parseName("John Smith, 604-123-9999");
 
-console.log(message);
+console.log(name);
