@@ -5,7 +5,7 @@ Contact.parseName = function(str) {
     // extract and return the name from the str argument
     // str will always contiain only one comma character
     var parts = str.split(',');
-    return parts[0];
+    return parts[0].trim();
 };
 
 module.exports = Contact;
