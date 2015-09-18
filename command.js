@@ -18,4 +18,16 @@ Command.getOperationData = function() {
     return process.argv[3];
 };
 
+Command.add = function(done){
+    var Contact = require('./contact');
+    // extracts the contact string from the command line arguments
+    var data = Command.getOperationData();
+    // converts the contact string into a contact objects using Contact.createContact
+    var contact = Contact.createContact(data);
+    // appends the contact object to data.json
+    // calls the callback done(err)
+    // err represents the error which will be null if no errors were encountered
+    Contact.saveContact(contact, done);
+};
+
 module.exports = Command;
