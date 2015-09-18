@@ -1,3 +1,4 @@
+
 var Contact = {};
 
 Contact.parseName = function(str) {
@@ -21,17 +22,19 @@ Contact.createContact = function(str){
 };
 
 Contact.loadContacts = function(done) {
+    var util = require('./util'),
+    jsonfile = require('jsonfile'),
+    jsonpath = util.getDataPath();
+
     // read data.json using jsonfile.readFile
-    var jsonfile = require('jsonfile');
-    // call done(err, data)
-    jsonfile.readFile('data.json', function(err, data) {
-        done(err, data);
-    });
+    jsonfile.readFile(jsonpath, done);
 };
 
 Contact.saveContacts = function(contacts, done) {
-    var jsonfile = require('jsonfile');
-    jsonfile.writeFile('data.json', contacts, done);
+    var util = require('./util'),
+    jsonfile = require('jsonfile'),
+    jsonpath = util.getDataPath();
+    jsonfile.writeFile(jsonpath, contacts, done);
 };
 
 Contact.saveContact = function(contact, done) {
