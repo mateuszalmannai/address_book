@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mateuszalmannai/address_book/issues"
   },
-  "homepage": "https://github.com/mateuszalmannai/address_book"
+  "homepage": "https://github.com/mateuszalmannai/address_book",
+  "dependencies": {
+    "jsonfile": "^2.2.2"
+  }
 }

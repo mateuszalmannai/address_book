@@ -20,4 +20,14 @@ Contact.createContact = function(str){
     return contact;
 };
 
+
+Contact.loadContacts = function(done) {
+    // read data.json using jsonfile.readFile
+    var jsonfile = require('jsonfile');
+    // call done(err, data)
+    jsonfile.readFile('data.json', function(err, data) {
+        done(err, data);
+    });
+};
+
 module.exports = Contact;
