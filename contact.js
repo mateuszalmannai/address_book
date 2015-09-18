@@ -30,4 +30,9 @@ Contact.loadContacts = function(done) {
     });
 };
 
+Contact.saveContacts = function(contacts, done) {
+    var jsonfile = require('jsonfile');
+    jsonfile.writeFile('data.json', contacts, done);
+};
+
 module.exports = Contact;

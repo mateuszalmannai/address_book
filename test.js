@@ -1,5 +1,10 @@
 var Contact = require('./contact');
 
-Contact.loadContacts(function(err, data){
-    console.log(data);
+var contacts = [ { name: "John Smith", number: "604-123-9090" } ];
+
+Contact.saveContacts(contacts, function(err) {
+  console.log('success');
+  // after the 'success' message is printed
+  // the contacts array
+  // should be in your 'data.json'
 });
