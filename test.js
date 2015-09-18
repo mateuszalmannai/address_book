@@ -1,7 +1,7 @@
-var Command = require('./command');
+var Util = require('./util');
 
-Command.find(function(err, results){
-  console.log('Find complete!');
-});
+var home = Util.getHomeDirectory();
+
+console.log(home);
 
 
