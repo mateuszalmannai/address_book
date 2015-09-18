@@ -20,7 +20,6 @@ Contact.createContact = function(str){
     return contact;
 };
 
-
 Contact.loadContacts = function(done) {
     // read data.json using jsonfile.readFile
     var jsonfile = require('jsonfile');
@@ -71,4 +70,17 @@ Contact.saveContact = function(contact, done) {
         // saveContacts will do it for us
     });
 };
+
+Contact.findContacts = function(name, done) {
+    this.loadContacts(function(err, contacts){
+        if (err) {
+            return done(err);
+        }
+        var filteredData = contacts.filter ( function (contact) {
+            return contact.name === name;
+        });
+        done(null, filteredData);
+    });
+};
+
 module.exports = Contact;
