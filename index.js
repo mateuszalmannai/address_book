@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var Command = require('./command');
 
 var arg = Command.getOperation();

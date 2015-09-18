@@ -18,5 +18,8 @@
   "homepage": "https://github.com/mateuszalmannai/address_book",
   "dependencies": {
     "jsonfile": "^2.2.2"
+  },
+  "bin": {
+      "contacts" : "index.js"
   }
 }
