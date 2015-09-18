@@ -30,4 +30,26 @@ Command.add = function(done){
     Contact.saveContact(contact, done);
 };
 
+Command.find = function(done){
+    var Contact = require('./contact');
+    // extracts the name from the command line arguments e.g. "John Smith"
+    var data = Command.getOperationData();
+    var name = Contact.parseName(data);
+    // searches for the contacts matching the given name using Contact.findContacts
+    // prints the matching contacts
+    // returns the matched contacts array via done callback
+    // e.g. done(err, foundContacts)
+    // where foundContacts is the array of contacts that matched the search
+    Contact.findContacts(name, function(err, result){
+        // err is the value for the error (null if no error was encountered)
+        if (err) {
+            return done(err);
+        }
+        result.forEach(function(contact){
+            console.log(contact.name, contact.number);
+        });
+        done(null, result);
+    });
+};
+
 module.exports = Command;
